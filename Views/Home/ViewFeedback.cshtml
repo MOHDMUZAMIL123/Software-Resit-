@@ -1,0 +1,65 @@
+﻿@model HappyTech.Models.Application
+@using HappyTech.Models;
+<div>
+    <h4>Feedback Info</h4>
+    @Html.ActionLink("Back To Home", "Index", "Home")
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Feedback Title
+        </dt>
+
+        <dd>
+            @Model.SubmittedBy -  @((ViewBag.TemplateList as ICollection<Template>).Where(temp=>temp.ID == Model.FeedbackId).FirstOrDefault().Title)
+        </dd>
+        <dt>
+            Feedback Description
+        </dt>
+
+        <dd>
+            @((ViewBag.TemplateList as ICollection<Template>).Where(temp=>temp.ID == Model.FeedbackId).FirstOrDefault().Feedback)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmittedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmittedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedbackSubmitted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedbackSubmitted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedbackSubmittedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedbackSubmittedBy)
+        </dd>
+
+    </dl>
+</div>
+
+
